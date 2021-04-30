@@ -109,6 +109,12 @@ app.post('/adddata',(req,res)=>{
     res.redirect('/')
     })
 })
+app.get('/adddata1',(req,res)=>{
+    db.collection(req.body.collection).find().toArray((err,result)=>{
+        if(err) return console.log(err)
+    res.render('/add.ejs',{data,result})
+    })
+})
 app.post('/update',(req,res)=>{
     db.collection(req.body.collection).find().toArray((err,result)=>{
         if(err)

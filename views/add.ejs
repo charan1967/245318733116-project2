@@ -60,6 +60,28 @@
             <!-- /.sidebar -->
         </aside>
         <div class="content-wrapper">
+            <form action="/adddata1" method="GET"></form>
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Select Vegetable type for available id's</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            Vegetable Id:
+                            <select type="text" class="form-control" name="collection">
+                                <option>leafy_vegetables</option>
+                                <option>cruciferous</option>
+                                <option>alluim</option>
+                                <option>root</option>
+                                <option>Marrow</option>
+                            </select>
+
+                        </div>
+                        <button onclick="IdGiver()"><input type="submit"></button>
+                    </div>
+                    
+                </div>
+            </form>
             <form action="/adddata" method="POST">
                 <div class="card card-info">
                     <div class="card-header">
@@ -78,12 +100,12 @@
                             <!-- <input type="text" class="form-control" placeholder="Product ID" name="collection"> -->
                         </div>
                         <div class="input-group mb-3">
-                            Vegetable Id: <input type="text" class="form-control" placeholder="Vegetable ID" name="v_id">
+                            Vegetable Id: <input type="text" class="form-control" placeholder="Vegetable ID"
+                                name="v_id">
                         </div>
 
                         <div class="input-group mb-3">
-                            Vegetable name: <input type="text" class="form-control" placeholder="Name"
-                                name="v_name">
+                            Vegetable name: <input type="text" class="form-control" placeholder="Name" name="v_name">
                         </div>
 
                         <div class="input-group mb-3">
@@ -121,6 +143,11 @@
         </div>
 
     </div>
+    <script>
+        function IdGiver() {
+          alert("The id availble starts from :",data.length);
+        }
+    </script>
 
 </body>
 
