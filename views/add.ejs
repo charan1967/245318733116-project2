@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Fashion Feet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand navbar-success navbar-dark">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav" style="padding-bottom: 30px;">
+                <li class="nav-item d-none d-inline-block">
+                    <a href="/" class="nav-link" style="color: beige;">
+                        <h1>Charan's Farm Inventory</h3>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link">
+                <img src="FFlogo.jpg" alt="Fashion Feet Logo" class="brand-image img-circle elevation-3">
+                <span class="brand-text font-weight-light">Fashion Feet</span>
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item">
+                            <a href="/create" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Add Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/deleteitems" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p class="text">Delete product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/updateitems" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p class="text">Update Sales</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+        <div class="content-wrapper">
+            <form action="/adddata" method="POST">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Stock Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            Vegetable Id:
+                            <select type="text" class="form-control" name="collection">
+                                <option>leafy_vegetables</option>
+                                <option>cruciferous</option>
+                                <option>alluim</option>
+                                <option>root</option>
+                                <option>Marrow</option>
+                            </select>
+                            <!-- <input type="text" class="form-control" placeholder="Product ID" name="collection"> -->
+                        </div>
+                        <div class="input-group mb-3">
+                            Vegetable Id: <input type="text" class="form-control" placeholder="Vegetable ID" name="v_id">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            Vegetable name: <input type="text" class="form-control" placeholder="Name"
+                                name="v_name">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            Stock Type:
+                            <select type="text" class="form-control" name="stock_type">
+                                <option>fresh</option>
+                                <option>3 days</option>
+                                <option>1 week</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            Stock Quantity(Quintals): <input type="text" class="form-control" placeholder="Quantity"
+                                name="quantity">
+                        </div>
+                        <br>
+                        <div class="input-group mb-3">
+                            Price: <input type="text" class="form-control" placeholder="Price" name="price">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+                <input type="submit">
+            </form>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

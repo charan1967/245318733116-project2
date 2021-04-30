@@ -1,0 +1,313 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Fashion Feet</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="dist/css/adminlte.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+
+
+<body class="hold-transition sidebar-mini">
+	<div class="wrapper">
+		<nav class="main-header navbar navbar-expand navbar-success navbar-dark">
+			<!-- Left navbar links -->
+				<ul class="navbar-nav" style="padding-bottom: 30px;" >
+					<li class="nav-item d-none d-inline-block">
+					<a href="/" class="nav-link" style="color: beige;"><h1>Charan's Farm Inventory</h3></a>
+					</li>
+				</ul>
+			</nav>
+			<!-- /.navbar -->
+			
+			<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+				<a href="#" class="brand-link">
+				  <img src="FFlogo.jpg"
+					   alt="Fashion Feet Logo"
+					   class="brand-image img-circle elevation-3">
+				  <span class="brand-text font-weight-light">Fashion Feet</span>
+				</a>
+				<!-- Sidebar -->
+				<div class="sidebar">
+					<nav class="mt-2">
+						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+						  <li class="nav-item">
+							<a href="/create" class="nav-link">
+							  <i class="nav-icon far fa-circle text-info"></i>
+							  <p>Add Product</p>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a href="/deleteitems" class="nav-link">
+							  <i class="nav-icon far fa-circle text-info"></i>
+							  <p class="text">Delete product</p>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a href="/updateitems" class="nav-link">
+							  <i class="nav-icon far fa-circle text-info"></i>
+							  <p class="text">Update Sales</p>
+							</a>
+						  </li>
+						  
+						</ul>
+					</nav>
+				
+				</div>
+				<!-- /.sidebar -->
+			</aside>
+		
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+
+			<section class="content">
+
+
+				
+
+				<div class="card-body table-responsive p-0" style="height: 1000px;">
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Leafy Vegetables</h3>
+						</div>
+					</div>
+					<table class="table table-striped text-nowrap">
+						<thead>
+							<tr>
+								<th style="width: 10%">Vegetable ID</th>
+								<th style="width: 10%">Name</th>
+								<th style="width: 10%">Stock type</th>
+								<th style="width: 15%">Quantity(Quintals)</th>
+								<th style="width: 10%">Total Price</th>
+								<th style="width: 20%"> </th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i=0; i<collectionOne.length ; i++) {%>
+								<tr>
+									<td>
+										<%= collectionOne[i].v_id %>
+									</td>
+									<td>
+										<%= collectionOne[i].v_name %>
+									</td>
+									<td>
+										<%= collectionOne[i].stock_type %>
+									</td>
+									<td>
+										<%= collectionOne[i].quantity %>
+									</td>
+									<td>
+										<%= collectionOne[i].price %>
+									</td>
+									<td class="project-actions text-right">
+										<a class="btn btn-info btn-sm" href="#"><i
+												class="fas fa-pencil-alt"></i>Edit</a>
+										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+									</td>
+
+								</tr>
+								<% } %>
+						</tbody>
+					</table>
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Cruciferous</h3>
+						</div>
+					</div>
+			
+ 			
+				 <!-- <div class="card-body table-responsive p-0" style="height: 400px;"> -->
+					<table class="table table-striped text-nowrap">
+						<thead>
+							<tr>
+								<th style="width: 10%">Vegetable ID</th>
+								<th style="width: 10%">Name</th>
+								<th style="width: 10%">Stock type</th>
+								<th style="width: 15%">Quantity(Quintals)</th>
+								<th style="width: 10%">Total Price</th>
+								<th style="width: 20%"> </th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i=0; i<collectionTwo.length ; i++) {%>
+								<tr>
+									<td>
+										<%= collectionTwo[i].v_id %>
+									</td>
+									<td>
+										<%= collectionTwo[i].v_name %>
+									</td>
+									<td>
+										<%= collectionTwo[i].stock_type %>
+									</td>
+									<td>
+										<%= collectionTwo[i].quantity %>
+									</td>
+									<td>
+										<%= collectionTwo[i].price %>
+									</td>
+									<td class="project-actions text-right">
+										<a class="btn btn-info btn-sm" href="#"><i
+												class="fas fa-pencil-alt"></i>Edit</a>
+										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+									</td>
+
+								</tr>
+								<% } %>
+						</tbody>
+					</table>
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Allium</h3>
+						</div>
+					</div>
+				<!-- <div class="card-body table-responsive p-0" style="height: 400px;"> -->
+					<table class="table table-striped text-nowrap">
+						<thead>
+							<tr>
+								<th style="width: 10%">Vegetable ID</th>
+								<th style="width: 10%">Name</th>
+								<th style="width: 10%">Stock type</th>
+								<th style="width: 15%">Quantity(Quintals)</th>
+								<th style="width: 10%">Total Price</th>
+								<th style="width: 20%"> </th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i=0; i<collectionThree.length ; i++) {%>
+								<tr>
+									<td>
+										<%= collectionThree[i].v_id %>
+									</td>
+									<td>
+										<%= collectionThree[i].v_name %>
+									</td>
+									<td>
+										<%= collectionThree[i].stock_type %>
+									</td>
+									<td>
+										<%= collectionThree[i].quantity %>
+									</td>
+									<td>
+										<%= collectionThree[i].price %>
+									</td>
+									<td class="project-actions text-right">
+										<a class="btn btn-info btn-sm" href="#"><i
+												class="fas fa-pencil-alt"></i>Edit</a>
+										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+									</td>
+
+								</tr>
+								<% } %>
+						</tbody>
+					</table>
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Marrow</h3>
+						</div>
+					</div>
+				<!-- <div class="card-body table-responsive p-0" style="height: 400px;"> -->
+					<table class="table table-striped  text-nowrap">
+						<thead>
+							<tr>
+								<th style="width: 10%">Vegetable ID</th>
+								<th style="width: 10%">Name</th>
+								<th style="width: 10%">Stock type</th>
+								<th style="width: 15%">Quantity(Quintals)</th>
+								<th style="width: 10%">Total Price</th>
+								<th style="width: 20%"> </th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i=0; i<collectionFour.length ; i++) {%>
+								<tr>
+									<td>
+										<%= collectionFour[i].v_id %>
+									</td>
+									<td>
+										<%= collectionFour[i].v_name %>
+									</td>
+									<td>
+										<%= collectionFour[i].stock_type %>
+									</td>
+									<td>
+										<%= collectionFour[i].quantity %>
+									</td>
+									<td>
+										<%= collectionFour[i].price %>
+									</td>
+									<td class="project-actions text-right">
+										<a class="btn btn-info btn-sm" href="#"><i
+												class="fas fa-pencil-alt"></i>Edit</a>
+										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+									</td>
+
+								</tr>
+								<% } %>
+						</tbody>
+					</table>
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Root</h3>
+						</div>
+					</div>
+				<!-- <div class="card-body table-responsive p-0" style="height: 400px;"> -->
+					<table class="table table-striped text-nowrap">
+						<thead>
+							<tr>
+								<th style="width: 10%">Vegetable ID
+								</th>
+								<th style="width: 10%">Name</th>
+								<th style="width: 10%">Stock type
+								</th>
+								<th style="width: 15%">
+									Quantity(Quintals)</th>
+								<th style="width: 10%">Total Price
+								</th>
+								<th style="width: 20%"> </th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i=0; i<collectionFive.length ; i++) {%>
+								<tr>
+									<td>
+										<%= collectionFive[i].v_id %>
+									</td>
+									<td>
+										<%= collectionFive[i].v_name %>
+									</td>
+									<td>
+										<%= collectionFive[i].stock_type %>
+									</td>
+									<td>
+										<%= collectionFive[i].quantity %>
+									</td>
+									<td>
+										<%= collectionFive[i].price %>
+									</td>
+									<td class="project-actions text-right">
+										<a class="btn btn-info btn-sm" href="#"><i
+												class="fas fa-pencil-alt"></i>Edit</a>
+										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+									</td>
+
+								</tr>
+								<% } %>
+						</tbody>
+					</table>
+				</div>
+			</section>
+			
+
+		</div>
+
+	</div>
+</body>
+
+</html>
