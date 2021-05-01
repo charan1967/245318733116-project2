@@ -93,26 +93,40 @@ app.get('/', function (req, res) {
 });
 
 app.get('/create', (req,res)=>{
-    res.render('add.ejs')
-})
+    res.render('add.ejs',{
+        One: collectionOne,
+        Two: collectionTwo,
+        Three: collectionThree,
+        Four: collectionFour,
+        Five: collectionFive,
+    })
+    })
 app.get('/updateitems', (req,res)=>{
-    res.render('update.ejs')
+    res.render('update.ejs',{
+        One: collectionOne,
+        Two: collectionTwo,
+        Three: collectionThree,
+        Four: collectionFour,
+        Five: collectionFive, 
+    })
 })
 
+
+
 app.get('/deleteitems', (req,res)=>{
-    res.render('delete.ejs')
+    res.render('delete.ejs',{
+        One: collectionOne,
+        Two: collectionTwo,
+        Three: collectionThree,
+        Four: collectionFour,
+        Five: collectionFive,
+    })
 })
 
 app.post('/adddata',(req,res)=>{
     db.collection(req.body.collection).insertOne(req.body,(err,result)=>{
         if(err) return console.log(err)
     res.redirect('/')
-    })
-})
-app.get('/adddata1',(req,res)=>{
-    db.collection(req.body.collection).find().toArray((err,result)=>{
-        if(err) return console.log(err)
-    res.render('/add.ejs',{data,result})
     })
 })
 app.post('/update',(req,res)=>{
@@ -147,3 +161,23 @@ app.post('/update',(req,res)=>{
      })
  })
 
+ app.get('/deletespecific1',(req,res)=>{
+     db.collection("leafy_vegetables").deleteOne({v_id:req.query.id});
+     res.redirect('/');
+ })
+ app.get('/deletespecific2',(req,res)=>{
+    db.collection("cruciferous").deleteOne({v_id:req.query.id});
+    res.redirect('/');
+})
+app.get('/deletespecific3',(req,res)=>{
+    db.collection("allium").deleteOne({v_id:req.query.id});
+    res.redirect('/');
+})
+app.get('/deletespecific4',(req,res)=>{
+    db.collection("Marrow").deleteOne({v_id:req.query.id});
+    res.redirect('/');
+})
+app.get('/deletespecific5',(req,res)=>{
+    db.collection("root").deleteOne({v_id:req.query.id});
+    res.redirect('/');
+})

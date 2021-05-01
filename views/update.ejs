@@ -2,12 +2,57 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Fashion Feet</title>
+    <title>Farm Inventory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 20%;
+        padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+</style>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -25,9 +70,9 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="#" class="brand-link">
-                <img src="FFlogo.jpg" alt="Fashion Feet Logo" class="brand-image img-circle elevation-3">
-                <span class="brand-text font-weight-light">Fashion Feet</span>
+            <a href="/" class="brand-link">
+                <img src="vege.jpg" alt="Charan's farm logo" class="brand-image img-circle elevation-3">
+                <span class="brand-text font-weight-light">Charan's farm </span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
@@ -49,7 +94,7 @@
                         <li class="nav-item">
                             <a href="/updateitems" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>
-                                <p class="text">Update Sales</p>
+                                <p class="text">Update Stock details</p>
                             </a>
                         </li>
 
@@ -62,49 +107,214 @@
 
         <div class="content-wrapper">
 
-            <section class="content">
-                <form action="/update" method="POST">
-                    <div class="card card-info">
-                        <div class="card-header">
-                          <h3 class="card-title">Update Stock Deatils</h3>
+            <form action="/update" method="POST">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Update Stock Deatils</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            Vegetable type:
+                            <select type="text" class="form-control" name="collection">
+                                <option>leafy_vegetables</option>
+                                <option>cruciferous</option>
+                                <option>alluim</option>
+                                <option>root</option>
+                                <option>Marrow</option>
+                            </select>
+                            <!-- <input type="text" class="form-control" placeholder="Product ID" name="collection"> -->
                         </div>
-                        <div class="card-body">
-                            <div class="input-group mb-3">
-                                Vegetable type:
-                                <select type="text" class="form-control" name="collection">
-                                    <option>leafy_vegetables</option>
-                                    <option>cruciferous</option>
-                                    <option>alluim</option>
-                                    <option>root</option>
-                                    <option>Marrow</option>
-                                </select>
-                                <!-- <input type="text" class="form-control" placeholder="Product ID" name="collection"> -->
+                        <div class="input-group mb-3">
+                            Vegetable Id: <input type="text" class="form-control" placeholder="Vegetable ID" name="v_id">
+                        </div>
+
+                        <div class="input-group">
+                            Stock Quantity: <input type="text" class="form-control" placeholder="Quantity"
+                                name="quantity">
+                        </div>
+                        <br>
+
+                        <!-- /input-group -->
+                        <input type="submit">
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+
+
+                
+            </form>
+
+
+
+            <div class="card-body">
+                <h3 style="text-align: center;">Existing Vegetable Deatils</h3>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-body table-responsive p-0">
+                                <h5 style="text-align: center;">Leafy Vegetable</h5>
+
+                                <table class="table table-striped text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">ID</th>
+                                            <th style="width: 10%">Quantity</th>
+                                            <th style="width: 10%">Name</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=0; i<One.length ; i++) {%>
+                                            <tr>
+                                                <td>
+                                                    <%= One[i].v_id %>
+                                                    
+                                                </td>
+                                                <td><%= One[i].quantity %></td>
+                                                <td><%= One[i].v_name %></td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
                             </div>
-                          <div class="input-group mb-3">
-                            Product Id: <input type="text" class="form-control" placeholder="Product ID" name="v_id">
-                          </div>
-        
-                          <div class="input-group">
-                            Stock Quantity: <input type="text" class="form-control" placeholder="Quantity" name="quantity">
-                          </div>
-                          <br>
-                          
-                          <!-- /input-group -->
+
                         </div>
-                        <!-- /.card-body -->
-                     </div>
-                      <!-- /.card -->
-        
-        
-        
-                     <input type="submit">
-                </form>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+
+                            <div class="card-body table-responsive p-0">
+                                <h5 style="text-align: center;">Cruciferous</h5>
+
+                                <table class="table table-striped text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">ID</th>
+                                            <th style="width: 10%">Quantity</th>
+                                            <th style="width: 10%">Name</th>
 
 
 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=0; i<Two.length ; i++) {%>
+                                            <tr>
+                                                <td>
+                                                    <%= Two[i].v_id %>
+                                                </td>
+                                                <td><%= Two[i].quantity %></td>
+                                                <td><%= Two[i].v_name %></td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-body table-responsive p-0">
+                                <h5 style="text-align: center;">Allium</h5>
+
+                                <table class="table table-striped text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">ID</th>
+                                            <th style="width: 10%">Quantity</th>
+                                            <th style="width: 10%">Name</th>
 
 
-            </section>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=0; i<Three.length ; i++) {%>
+                                            <tr>
+                                                <td>
+                                                    <%= Three[i].v_id %>
+                                                </td>
+                                                <td><%= Three[i].quantity %></td>
+                                                <td><%= Three[i].v_name %></td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+
+                            <div class="card-body table-responsive p-0">
+                                <h5 style="text-align: center;">Marrow</h5>
+
+                                <table class="table table-striped text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">ID</th>
+                                            <th style="width: 10%">Quantity</th>
+                                            <th style="width: 10%">Name</th>
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=0; i<Four.length ; i++) {%>
+                                            <tr>
+                                                <td>
+                                                    <%= Four[i].v_id %>
+                                                </td>
+                                                <td><%= Four[i].quantity %></td>
+                                                <td><%= Four[i].v_name %></td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-body table-responsive p-0">
+                                <h5 style="text-align: center;">Root</h5>
+
+                                <table class="table table-striped text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">ID</th>
+                                            <th style="width: 10%">Quantity</th>
+                                            <th style="width: 10%">Name</th>
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=0; i<Five.length ; i++) {%>
+                                            <tr>
+                                                <td>
+                                                    <%= Five[i].v_id %>
+                                                </td>
+                                                <td><%= Five[i].quantity %></td>
+                                                <td><%= Five[i].v_name %></td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
 
         </div>

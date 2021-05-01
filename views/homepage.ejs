@@ -2,7 +2,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Fashion Feet</title>
+	<title>Farm Inventory</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 	<link rel="stylesheet" href="dist/css/adminlte.min.css">
@@ -27,9 +27,9 @@
 
 		<aside class="main-sidebar sidebar-dark-primary elevation-4">
 			<!-- Brand Logo -->
-			<a href="#" class="brand-link">
-				<img src="FFlogo.jpg" alt="Fashion Feet Logo" class="brand-image img-circle elevation-3">
-				<span class="brand-text font-weight-light">Fashion Feet</span>
+			<a href="/" class="brand-link">
+				<img src="vege.jpg" alt="Charan's farm logo" class="brand-image img-circle elevation-3">
+                <span class="brand-text font-weight-light">Charan's farm </span>
 			</a>
 			<!-- Sidebar -->
 			<div class="sidebar">
@@ -51,7 +51,7 @@
 						<li class="nav-item">
 							<a href="/updateitems" class="nav-link">
 								<i class="nav-icon far fa-circle text-info"></i>
-								<p class="text">Update Sales</p>
+								<p class="text">Update Stock details</p>
 							</a>
 						</li>
 
@@ -71,7 +71,7 @@
 
 
 
-				<div class="card-body table-responsive p-0" style="height: 1100px;">
+				<div class="card-body table-responsive p-0" style="height: 850px;">
 					<div class="card">
 						<div class="card-header">
 							<h3 class="card-title">Leafy Vegetables</h3>
@@ -109,9 +109,9 @@
 										<%= collectionOne[i].price %>
 									</td>
 									<td class="project-actions text-right">
-										<a class="btn btn-info btn-sm" href="#"><i
-												class="fas fa-pencil-alt"></i>Edit</a>
-										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+										<a class="btn btn-info btn-sm" href="/updateitems?id=<%= collectionOne[i].v_id %>">
+											<i class="fas fa-pencil-alt"></i>Edit</a>
+										<a class="btn btn-danger btn-sm" href="deletespecific1?id=<%= collectionOne[i].v_id %>"><i class="fas fa-trash"></i>Delete</a>
 									</td>
 
 								</tr>
@@ -158,9 +158,9 @@
 										<%= collectionTwo[i].price %>
 									</td>
 									<td class="project-actions text-right">
-										<a class="btn btn-info btn-sm" href="#"><i
+										<a class="btn btn-info btn-sm" href="/updateitems?id=<%= collectionTwo[i].v_id %>"><i
 												class="fas fa-pencil-alt"></i>Edit</a>
-										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+										<a class="btn btn-danger btn-sm" href="deletespecific2?id=<%= collectionTwo[i].v_id %>"><i class="fas fa-trash"></i>Delete</a>
 									</td>
 
 								</tr>
@@ -205,9 +205,9 @@
 										<%= collectionThree[i].price %>
 									</td>
 									<td class="project-actions text-right">
-										<a class="btn btn-info btn-sm" href="#"><i
+										<a class="btn btn-info btn-sm" href="/updateitems?id=<%= collectionThree[i].v_id %>"><i
 												class="fas fa-pencil-alt"></i>Edit</a>
-										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+										<a class="btn btn-danger btn-sm" href="deletespecific3?id=<%= collectionThree[i].v_id %>"><i class="fas fa-trash"></i>Delete</a>
 									</td>
 
 								</tr>
@@ -252,9 +252,9 @@
 										<%= collectionFour[i].price %>
 									</td>
 									<td class="project-actions text-right">
-										<a class="btn btn-info btn-sm" href="#"><i
+										<a class="btn btn-info btn-sm" href="/updateitems?id=<%= collectionFour[i].v_id %>"><i
 												class="fas fa-pencil-alt"></i>Edit</a>
-										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+										<a class="btn btn-danger btn-sm" href="deletespecific4?id=<%= collectionFour[i].v_id %>"><i class="fas fa-trash"></i>Delete</a>
 									</td>
 
 								</tr>
@@ -303,9 +303,9 @@
 										<%= collectionFive[i].price %>
 									</td>
 									<td class="project-actions text-right">
-										<a class="btn btn-info btn-sm" href="#"><i
+										<a class="btn btn-info btn-sm" href="/updateitems?id=<%= collectionFive[i].v_id %>"><i
 												class="fas fa-pencil-alt"></i>Edit</a>
-										<a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
+										<a class="btn btn-danger btn-sm" href="deletespecific5?id=<%= collectionFive[i].v_id %>"><i class="fas fa-trash"></i>Delete</a>
 									</td>
 
 								</tr>
